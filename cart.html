@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <style>
+            #product{
+              margin:4%,4%,20%, 4%; 
+            /* border: 1px solid black; */
+            height: 250px;
+
+            display:inline-flex;
+            grid-template-columns: 10% 10% 10% 10%;
+            grid-gap: 1%;
+            justify-content: center;
+           
+        }
+        button{
+            background-color: #D32F2F;
+            color: white;
+            height: 40px;
+            border-radius: 10%;
+            text-align: center;
+            margin-left: 50px;
+            border: none;
+        }
+        #mainDiv{
+            height: 400px;
+            /* border: 1px solid red; */
+            margin: 5%,5%,20%,5%;
+        }
+        p{
+            margin: 4px;
+            text-align: center;
+        }
+        h3{
+            margin-left: 2%;
+        }
+        img{
+            margin-left: 30px;
+        }
+        #prod1:hover{
+            box-shadow: 2px 2px 2px 2px #757575;
+            border-radius: 10%;
+        }#gtcart{
+            float: right;
+        }h1{
+            background-color: #757575;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to cart</h1>
+    <div id="product"></div>
+</body>
+</html>
+<script>
+
+  //1. get the data from local storeage
+  let parent = document.getElementById("product")
+
+  let cart = JSON.parse(localStorage.getItem("cart"));
+  console.log(("cart", cart));
+
+     function showProduct(){
+     cart.forEach(function(product){
+       
+   
+
+     let div = document.createElement("div")
+
+      div.style.height = "300px"
+      div.style.padding = "8px"
+      div.id = "prod1"
+      
+
+
+     let img = document.createElement("img")
+
+     img.src=product.img
+
+     let product_price = document.createElement("p")
+
+      product_price.textContent = product.price
+
+     let product_name = document.createElement("p")
+ 
+      product_name.textContent = product.name
+
+      let size_name = document.createElement("p")
+
+   size_name.textContent = product.size
+
+     let addtocart_btn = document.createElement("button")
+
+       addtocart_btn.innerText = "Buy Now";  //append
+        //console.log(product)
+       addtocart_btn.onclick = function(){
+          
+           addtocart(product)
+       };
+
+      div.append(img, product_name ,size_name, product_price,addtocart_btn);
+
+      parent.append(div);
+
+
+    });
+   
+  }
+  showProduct();
+
+
+  
+</script>

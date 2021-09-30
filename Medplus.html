@@ -6,12 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Medplus.com</title>
     <style>
+        *{
+            font-family: sans-serif;
+        }
         
            #product{
               margin:4%,4%,20%, 4%; 
             /* border: 1px solid black; */
             height: 250px;
-
+            
             display:inline-flex;
             grid-template-columns: 10% 10% 10% 10%;
             grid-gap: 1%;
@@ -24,11 +27,14 @@
             height: 40px;
             border-radius: 10%;
             text-align: center;
-            margin-left: 50px;
-            border: white;
+            margin-left: 25%;
+            border: none;
+            cursor: pointer;
+            
         }
         #mainDiv{
             height: 400px;
+           
             /* border: 1px solid red; */
             margin: 5%,5%,20%,5%;
         }
@@ -40,13 +46,18 @@
             margin-left: 2%;
         }
         img{
-            margin-left: 30px;
+            margin-left: 0%;
+         
         }
         #prod1:hover{
-            box-shadow: 2px 2px 2px 2px #757575;
-        }#gtcart{
-            float: right;
+            box-shadow: 3px 2px 2px 3px #757575;
+           border-radius: 10%;
         }
+        #gtcart{
+            float: right;
+            
+        }
+        
         
     </style>
 </head>
@@ -54,7 +65,7 @@
     
     <a href="cart.html"><button id="gtcart">Go to cart</button></a>
 
-
+     <a href="dicription.html" ></a>
 
     <div id="mainDiv">
         <h3>Top Offers</h3>
@@ -136,11 +147,17 @@
     divs.style.height = "300px"
     divs.style.padding = "8px"
     divs.id = "prod1"
+    
 
    let img = document.createElement("img")
 
    img.src=product.img
-
+   img.id = "imgd"
+    
+   img.addEventListener("click", description);
+       
+   
+     
    let pr_price = document.createElement("p")
 
    pr_price.textContent = product.price
@@ -187,6 +204,8 @@ showProduct();
 
    }
 
-
+   function description() {
+        window.location.href = "dicription.html"
+    }
 
 </script>
