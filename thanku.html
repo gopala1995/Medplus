@@ -8,31 +8,23 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bonheur+Royale&display=swap" rel="stylesheet">
+
+
+<script src=
+"https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js">
+  </script>
     <style>
-        *{
-            font-family: 'Bonheur Royale', cursive;
-          
-            background-color: darkcyan;
-            color:#FFC107;
-        }
-        h1{
-            font-size: 200px;
-            margin-left: 25%;
-        }
-        h3{
-            font-size: 100px;
-            margin-left: 30%;
-            margin-bottom: 1px;
-        }
+       
        
     </style>
 </head>
 <body>
-    <div id="div">
-        <h1>Congratulation</h1>
-    <h3>Order succesfully placed . . . .</h3>
-    </div>
     
-
+    <script>
+        swal("Congratulations", " Your Order succesfully placed ", "success", {
+          button: "Done",
+     
+        });
+      </script>
 </body>
 </html>
